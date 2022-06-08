@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <ul>
+        <li><a href="./index.html">home</a></li>
+    </ul>
+    <div class="table">
+        <h1>Table</h1>
+        <input type="number" id="tablename" placeholder="Table Number">
+        <input type="number" id="tabletime" placeholder="Table Count"><br><br>
+        <p id="fortable"></p>
+        <button onclick="table()">Table</button><br><br>
+    </div>
+
+    <div class="Calculater">
+        <h1>Calculater</h1>
+        <br><br>
+        <input type="number" id="number1" placeholder="First Number">
+        <input type="number" id="number2" placeholder="Second Number"><br>
+        <button onclick="sub()"><b>-</b></button>
+        <button onclick="sum()"><b>+</b></button>
+        <button onclick="multiply()"><b>x</b></button>
+        <button onclick="divide()"><b>/</b></button>
+        <button onclick="percentage()"><b>%</b></button><br>
+        <input type="text" id="number3" placeholder="Answer"><br><br>
+    </div>
+
+    <div>
+        <h1>Converter</h1>
+        <input type="number" id="Value" placeholder="Value">
+        <button onclick="fahrenheit()">fahrenheit</button>
+        <button onclick="celsius()">celsius</button>
+        <input type="text" id="ConvertValue" placeholder="Convert Value"><br><br>
+    </div>
+    <div class="tableofRecipet">
+        <h1>Shopping Cart</h1>
+        <table id="shoppingcart">
+            <tr>
+                <th>S.No</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Ball</td>
+                <td>RS: 120</td>
+                <td><input type="number" id="Quantity1" oninput="item1()"></td>
+                <td><input type="number" id="Amount1"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Bat</td>
+                <td>RS: 1200</td>
+                <td><input type="number" id="Quantity2" oninput="item2()"></td>
+                <td><input type="number" id="Amount2"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Tap</td>
+                <td>RS: 40</td>
+                <td><input type="number" id="Quantity3" oninput="item3()"></td>
+                <td><input type="number" id="Amount3"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Wicket</td>
+                <td>RS: 700</td>
+                <td><input type="number" id="Quantity4" oninput="item4()"></td>
+                <td><input type="number" id="Amount4"></td>
+            </tr>
+            <tr>
+                <td colspan="3">Thanks for Shopping</td>
+                <td><input type="number" id="TotalQuantity"></td>
+                <td><input type="number" id="TotalAmount"></td>
+            </tr>
+        </table>
+        <button onclick="print()">Print</button>
+    </div>
+    <div>
+        <p id="value1"></p>
+        <p id="value2"></p>
+        <p id="value3"></p>
+        <p id="value4"></p>
+        <p id="value5"></p>
+        <p id="value6"></p>
+    </div>
+    <div>
+        <p id="price"> Price Of Movie Ticket is 600Rs</p>
+        <input id="numberoftickits" type="number" placeholder="Number of ticket">
+        <p id="totalprice"></p>
+        <button onclick="price()">Price</button>
+    </div>
+    <div>
+        <input type="number" id="riyal" oninput="riyal()" placeholder="Riyal to Rupees">
+        <p id="riyal-to-Rs"></p>
+        <input type="number" id="dollar" oninput="dollar()" placeholder="Dollar to Rupees">
+        <p id="dollar-to-Rs"></p>
+
+    </div>
+    <div>
+        <input type="number" id="Currentyear" placeholder="Your Current Year">
+        <input type="number" id="Birthyear" placeholder="Your Birth Year">
+        <p id="age"></p>
+        <button onclick="age()">Age</button>
+    </div>
+    <script>
+        // //1-2
+        function sub() {
+            let number1 = document.querySelector("#number1").value;
+            let number2 = document.querySelector("#number2").value;
+            document.querySelector("#number3").value = Number(number1) - Number(number2);
+            number1 = document.querySelector("#number1").value = " ";
+            number2 = document.querySelector("#number2").value = " ";
+
+        }
+        function sum() {
+            let number1 = document.querySelector("#number1").value;
+            let number2 = document.querySelector("#number2").value;
+            document.querySelector("#number3").value = Number(number1) + Number(number2);
+            number1 = document.querySelector("#number1").value = " ";
+            number2 = document.querySelector("#number2").value = " ";
+        }
+        function multiply() {
+            let number1 = document.querySelector("#number1").value;
+            let number2 = document.querySelector("#number2").value;
+            document.querySelector("#number3").value = Number(number1) * Number(number2);
+            number1 = document.querySelector("#number1").value = " ";
+            number2 = document.querySelector("#number2").value = " ";
+        }
+        function divide() {
+            let number1 = document.querySelector("#number1").value;
+            let number2 = document.querySelector("#number2").value;
+            document.querySelector("#number3").value = Number(number1) / Number(number2);
+            number1 = document.querySelector("#number1").value = " ";
+            number2 = document.querySelector("#number2").value = " ";
+        }
+        function percentage() {
+            let number1 = document.querySelector("#number1").value;
+            let number2 = document.querySelector("#number2").value;
+            document.querySelector("#number3").value = [Number(number1) / Number(number2)] * 100 + "%";
+            number1 = document.querySelector("#number1").value = " ";
+            number2 = document.querySelector("#number2").value = " ";
+        }
+        // //3
+        let value1 = document.getElementById("value1");
+        let value2 = document.getElementById("value2");
+        let value3 = document.getElementById("value3");
+        let value4 = document.getElementById("value4");
+        let value5 = document.getElementById("value5");
+        let value6 = document.getElementById("value6");
+        let number;
+        value1.innerHTML = "Value after variable declaration is undefined";
+        number = 5
+        value2.innerHTML = "Initial value is : " + number;
+        number = ++number;
+        value3.innerHTML = "Value after increment is : " + number;
+        number = number + 7;
+        value4.innerHTML = "Value after addition 7 is : " + number;
+        number = --number;
+        value5.innerHTML = "Value after decrement is : " + number;
+        number = number / 3;
+        value6.innerHTML = "Remainder after/3 is : " + number;
+        // //4
+        function price() {
+            let numberoftickits = document.querySelector("#numberoftickits").value;
+            let totalprice = document.getElementById("totalprice");
+            let price = 600;
+            totalprice.innerHTML = "Total Price is : " + price * numberoftickits;
+
+        }
+        // //5
+        function table() {
+            let tableName = document.querySelector("#tablename").value;
+            let tableTime = document.querySelector("#tabletime").value;
+            let result = "";
+            let table = document.getElementById("fortable");
+            table.innerHTML = ``;
+            for (let index = 0; index < tableTime; index++) {
+                table.innerHTML += `${tableName}  x  ${index + 1} = ${tableName * (index + 1)} <br/>`;
+            }
+        }
+        // //6
+        function fahrenheit() {
+            let value = document.querySelector("#Value").value;
+            document.querySelector("#ConvertValue").value = [Number(value) * 9 / 5] + 32 + "F";
+            value = document.querySelector("#Value").value = 0;
+
+        }
+        function celsius() {
+            let value = document.querySelector("#Value").value;
+            document.querySelector("#ConvertValue").value = [Number(value) - 32] * 5 / 9 + "C";
+            value = document.querySelector("#Value").value = 0;
+
+        }
+        let quantity1;
+        let amount1;
+        let quantity2;
+        let amount2;
+        let quantity3;
+        let amount3;
+        let quantity4;
+        let amount4;
+        let TotalAmount;
+        let TotalQuantity;
+        function item1() {
+            quantity1 = document.querySelector("#Quantity1").value;
+            amount1 = document.querySelector("#Amount1").value = 120 * Number(quantity1);
+            document.querySelector("#TotalAmount").value = 120 * Number(quantity1);
+            document.querySelector("#TotalQuantity").value = Number(quantity1);
+        }
+        function item2() {
+            quantity2 = document.querySelector("#Quantity2").value;
+            amount2 = document.querySelector("#Amount2").value = 1200 * Number(quantity2);
+            document.querySelector("#TotalAmount").value = Number(amount1) + Number(amount2);
+            document.querySelector("#TotalQuantity").value = Number(quantity2) + Number(quantity1);
+        }
+        function item3() {
+            quantity3 = document.querySelector("#Quantity3").value;
+            amount3 = document.querySelector("#Amount3").value = 40 * Number(quantity3);
+            document.querySelector("#TotalAmount").value = Number(amount1) + Number(amount2) + Number(amount3);
+            document.querySelector("#TotalQuantity").value = Number(quantity2) + Number(quantity1) + Number(quantity3);
+        }
+        function item4() {
+            quantity4 = document.querySelector("#Quantity4").value;
+            amount4 = document.querySelector("#Amount4").value = 700 * Number(quantity4);
+            document.querySelector("#TotalAmount").value = Number(amount1) + Number(amount2) + Number(amount3) + Number(amount4);
+            document.querySelector("#TotalQuantity").value = Number(quantity2) + Number(quantity1) + Number(quantity3) + Number(quantity4);
+        }
+        function print() {
+            quantity1 = document.querySelector("#Quantity1").value = 0;
+            amount1 = document.querySelector("#Amount1").value = 0;
+            quantity2 = document.querySelector("#Quantity2").value = 0;
+            amount2 = document.querySelector("#Amount2").value = 0;
+            quantity3 = document.querySelector("#Quantity3").value = 0;
+            amount3 = document.querySelector("#Amount3").value = 0;
+            quantity4 = document.querySelector("#Quantity4").value = 0;
+            amount4 = document.querySelector("#Amount4").value = 0;
+            TotalAmount = document.querySelector("#TotalAmount").value = 0;
+            TotalQuantity = document.querySelector("#TotalQuantity").value = 0;
+        }
+        // //9
+        function riyal() {
+            let riyal = document.querySelector("#riyal").value;
+            document.getElementById("riyal-to-Rs").innerHTML = [Number(riyal) * 50] + " " + "Rs";
+        }
+        function dollar() {
+            let dollar = document.querySelector("#dollar").value;
+            document.getElementById("dollar-to-Rs").innerHTML = [Number(dollar) * 200] + " " + "Rs";
+        }
+
+        //11 age calculater
+        function age() {
+            let Currentyear = document.getElementById("Currentyear").value;
+            let Birthyear = document.getElementById("Birthyear").value;
+            document.querySelector("#age").innerHTML = "Your Age is : " + (Currentyear - Birthyear);
+
+        }
+        //8
+        // let totalMarks = 1000;
+        // let obtained = 569;
+        // let percentage = (obtained / totalMarks) * 100;
+        // document.write("Marks Sheet" + "<br />" + "Total Marks is :" + totalMarks + "<br />" + "Marks Obtained is :" + obtained + "<br />" + "Percentage is :" + percentage + "<br />");
+        //10
+        // let income = 10000;
+        // document.write("income" + income + "<br/>");
+        // income = [(income + 5) * 10] / 2;
+        // document.write("income" + income + "<br/>");   
+        //12 geometrizer
+        // let r = 15;
+        // document.write("Radius fo circle" + " " + r + "<br/>");
+        // let pie = 3.142;
+        // let circumference = 2 * pie * r;
+        // document.write("circumference of circle" + " " + circumference + "<br/>");
+        // let area = pie * r;
+        // document.write("area of circle" + " " + area + "<br/>");
+        // //13
+        // let favouriteSnack = "chocolate";
+        // let currentAge = 14;
+        // let maximumAge = 60;
+        // let amountSnankDaily = 4;
+
+
+        function ball() {
+            let quantity1 = document.querySelector("#Quantity1").value;
+            document.getElementById("#Amount1") = quantity1 * 120;
+            let quantity2 = document.querySelector("#Quantity2").value;
+            document.getElementById("#Amount2") = quantity2 * 1200;
+            let quantity3 = document.querySelector("#Quantity3").value;
+            document.getElementById("#Amount3") = quantity3 * 40;
+            let quantity4 = document.querySelector("#Quantity4").value;
+            document.getElementById("#Amount4") = quantity4 * 60;
+
+        }
+
+
+    </script>
+</body>
+
+</html>

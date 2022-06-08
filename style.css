@@ -1,0 +1,119 @@
+ul {
+    text-align: center;
+    margin-left: 40%;
+}
+
+div {
+    text-align: center;
+
+}
+
+ul>li {
+    list-style-type: none;
+    border: 1px solid black;
+    border-radius: 0px 10px 0px 10px;
+    margin-top: 25px;
+    width: 15%;
+    background-color: rgb(156, 143, 143);
+
+}
+
+ul>li:hover {
+    border: 2px solid yellow;
+    color: rgb(156, 143, 143);
+    background-color: black;
+
+}
+
+ul>li>a {
+    text-decoration: none;
+    color: white;
+}
+
+input,
+#sheet {
+    padding: 3px;
+    height: 25px;
+    color: white;
+    background-color: rgb(156, 143, 143);
+    border: 1px solid black;
+    border-radius: 0px 10px 0px 10px;
+}
+
+input:hover {
+    /* border: 2px solid yellow; */
+    color: white;
+    background-color: black;
+}
+
+input::placeholder {
+    color: white;
+}
+
+button {
+    background-color: rgb(156, 143, 143);
+    color: white;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 0px 10px 0px 10px;
+
+}
+
+button:hover {
+    border: 2px solid yellow;
+    color: white;
+    background-color: black;
+
+}
+
+input:hover {
+    border: 1px solid yellow;
+    color: white;
+    background-color: black;
+
+}
+
+.Calculater>button {
+    width: 30px !important;
+    margin: 5px !important;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+.table {
+    text-align: center;
+    width: 15%;
+    margin: 2% 40% 2% 40%;
+}
+
+.tableofRecipet {
+    margin: 2% 30% 2% 30%;
+    padding: 5px;
+}
+
+#shoppingcart {
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+
+.tableofRecipet input {
+    text-decoration: none;
+    width: 90%;
+    background-color: white;
+    color: black;
+    border-radius: 0px;
+    text-align: center;
+
+}
+
+#fortable {
+    word-spacing: 10px;
+    background-color: rgb(156, 143, 143);
+    color: white;
+}
+
+#riyal {
+    margin-top: 10px;
+}

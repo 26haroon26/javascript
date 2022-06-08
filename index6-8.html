@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6-8</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <ul>
+
+        <li><a href="./index.html">home</a></li>
+    </ul>
+    <div class="table">
+        <h1>Table</h1>
+        <input type="number" id="tablename" placeholder="Table Number">
+        <input type="number" id="tabletime" placeholder="Table Count"><br><br>
+        <p id="fortable"></p>
+        <button onclick="table()">Table</button><br><br>
+    </div>
+    <div>
+        <table class="table">
+            <tr>
+                <td id="mainsubject">Subject</td>
+                <td id="mainmark">TotalMarks</td>
+                <td id="mainobtained">ObtainedMarks</td>
+                <td id="mainpercentage">Percentage</td>
+            </tr>
+            <tr>
+                <td id="subjec1">English</td>
+                <td id="marks1">100</td>
+                <td id="obtainedmarks1">54</td>
+                <td id="percentage1">54%</td>
+            </tr>
+            <tr>
+                <td id="subjec2">Math</td>
+                <td id="marks2">100</td>
+                <td id="obtainedmarks2">54</td>
+                <td id="percentage2">54%</td>
+            </tr>
+            <tr>
+                <td id="subjec3">Urdu</td>
+                <td id="marks3">100</td>
+                <td id="obtainedmarks3">48</td>
+                <td id="percentage3">48%</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="totalmarks">300</td>
+                <td id="totalobtainedmarks">156</td>
+                <td id="totalpercentage">52%</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        //1
+        let a = 10;
+        document.write("Result:" + "<br/>" + "The value of a is " + a + "<br/>" + "<br/>");
+        a = ++a;
+        document.write("The value of ++a is " + a + "<br/>" + "Now The value of a is " + a + "<br/>" + "<br/>");
+        a = a++;
+        document.write("The value of a++ is  11" + "<br/>" + "Now The value of a is " + a + "<br/>" + "<br/>");
+        a = --a;
+        document.write("The value of --a is " + a + "<br/>" + "Now The value of a is " + a + "<br/>" + "<br/>");
+        a = a--;
+        document.write("The value of a-- is  11" + "<br/>" + "Now The value of a is " + a + "<br/>" + "<br/>");
+        //2
+        let c = 2;
+        let d = 1;
+        document.write("c = ", c, "<br/>", "d = ", d, "<br/>", "--c = ", --c, "<br/>", "--c - --d  = ", --c - --d, "<br/>", "--c - --d + ++d = ", --c - --d + ++d, "<br/>", "--c - --d + ++d + d-- = ", --c - --d + ++d + d--, "<br/>");
+        let result = --c - --d + ++d + d--;
+        document.write(result, "<br/>");
+        //3
+        let userName = prompt("Enter your name", "Haroon");
+        alert("Well Come to this website" + " " + userName);
+        //5
+        function table() {
+            let tableName = document.querySelector("#tablename").value;
+            let tableTime = document.querySelector("#tabletime").value;
+            let result = "";
+            let table = document.getElementById("fortable");
+            table.innerHTML = ``;
+            for (let index = 0; index < tableTime; index++) {
+                table.innerHTML += `${tableName}  x  ${index + 1} = ${tableName * (index + 1)} <br/>`;
+            }
+        }
+        //6
+        document.getElementById("#mainsubject");
+        document.getElementById("#mainmark");
+        document.getElementById("#mainobtained");
+        document.getElementById("#mainpercentage");
+        document.getElementById("#subjec1");
+        document.getElementById("#marks1");
+        document.getElementById("#obtainedmarks1");
+        document.getElementById("#percentage1");
+        document.getElementById("#subjec2");
+        document.getElementById("#marks2");
+        document.getElementById("#obtainedmarks2");
+        document.getElementById("#percentage2");
+        document.getElementById("#subjec3");
+        document.getElementById("#marks3");
+        document.getElementById("#obtainedmarks3");
+        document.getElementById("#percentage3");
+        document.getElementById("#totalmarks");
+        document.getElementById("#totalobtainedmarks");
+        document.getElementById("#totalpercentage");
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 14-16</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <ul>
+        <li><a href="./index.html">home</a></li>
+    </ul>
+    <div>
+        <h1>Qualifications :</h1>
+        <p id="qualifications"></p>
+    </div>
+    <div>
+        <h1>Number & Percentage :</h1>
+        <input type="text" id="student1" placeholder="write your name">
+        <input type="text" id="student2" placeholder="write your name">
+        <input type="text" id="student3" placeholder="write your name">
+        <br><br>
+        <input type="number" id="studentnum1" placeholder=" your number out of 500">
+        <input type="number" id="studentnum2" placeholder=" your number out of 500">
+        <input type="number" id="studentnum3" placeholder=" your number out of 500">
+        <p id="numandper1"></p>
+        <p id="numandper2"></p>
+        <p id="numandper3"></p>
+        <button onclick="check()">Check</button>
+    </div>
+    <script>
+        // let studentname = ["xyz"];
+        // let studentname1 = ["haroon"];
+        // let studentid = [09];
+        // let mixed = [studentname, studentname1, studentid];
+        let qualifications = ["SSC", "HSC", "BCS", "BS", "BCOM", "MS", "M. Phil.", "PhD"];
+        for (let index = 0; index < qualifications.length; index++) {
+            document.getElementById("qualifications").innerHTML += qualifications[index] + "<br>";
+        }
+        let student1 = document.getElementById("student1").value;
+        let student2 = document.getElementById("student2").value;
+        let student3 = document.getElementById("student3").value;
+        let studentnum1 = document.getElementById("studentnum1").value;
+        let studentnum2 = document.getElementById("studentnum2").value;
+        let studentnum3 = document.getElementById("studentnum3").value;
+        let studentname = [student1, student2, student3];
+        let studentnum = [studentnum1, studentnum2, studentnum3];
+        let totalnum = 500;
+        let result1 = document.getElementById("numandper1");
+        let result2 = document.getElementById("numandper2");
+        let result3 =document.getElementById("numandper3");
+        function check() {
+          result1.innerHTML = `Score of ${student1} is ${studentnum1}  Percentage ${(studentnum1 / totalnum) * 100} %`;
+          result2.innerHTML = `Score of ${student2} is ${studentnum2}  Percentage ${(studentnum2 / totalnum) * 100} %`;
+          result3.innerHTML = `Score of ${student3} is ${studentnum3}  Percentage ${(studentnum3 / totalnum) * 100} %`;
+
+        }
+
+    </script>
+</body>
+
+</html>
