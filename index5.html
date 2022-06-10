@@ -193,14 +193,17 @@
         // //6
         function fahrenheit() {
             let value = document.querySelector("#Value").value;
-            document.querySelector("#ConvertValue").value = [Number(value) * 9 / 5] + 32 + "F";
-            value = document.querySelector("#Value").value = 0;
-
+            if (value > 0) {
+                document.querySelector("#ConvertValue").value = [Number(value) * 9 / 5] + 32 + "F";
+                value = document.querySelector("#Value").value = "";
+            }
         }
         function celsius() {
             let value = document.querySelector("#Value").value;
-            document.querySelector("#ConvertValue").value = [Number(value) - 32] * 5 / 9 + "C";
-            value = document.querySelector("#Value").value = 0;
+            if (value > 0) {
+                document.querySelector("#ConvertValue").value = [Number(value) - 32] * 5 / 9 + "C";
+                value = document.querySelector("#Value").value = "";
+            }
 
         }
         let quantity1;
@@ -238,16 +241,16 @@
             document.querySelector("#TotalQuantity").value = Number(quantity2) + Number(quantity1) + Number(quantity3) + Number(quantity4);
         }
         function print() {
-            quantity1 = document.querySelector("#Quantity1").value = 0;
-            amount1 = document.querySelector("#Amount1").value = 0;
-            quantity2 = document.querySelector("#Quantity2").value = 0;
-            amount2 = document.querySelector("#Amount2").value = 0;
-            quantity3 = document.querySelector("#Quantity3").value = 0;
-            amount3 = document.querySelector("#Amount3").value = 0;
-            quantity4 = document.querySelector("#Quantity4").value = 0;
-            amount4 = document.querySelector("#Amount4").value = 0;
-            TotalAmount = document.querySelector("#TotalAmount").value = 0;
-            TotalQuantity = document.querySelector("#TotalQuantity").value = 0;
+            quantity1 = document.querySelector("#Quantity1").value = "";
+            amount1 = document.querySelector("#Amount1").value = "";
+            quantity2 = document.querySelector("#Quantity2").value = "";
+            amount2 = document.querySelector("#Amount2").value = "";
+            quantity3 = document.querySelector("#Quantity3").value = "";
+            amount3 = document.querySelector("#Amount3").value = "";
+            quantity4 = document.querySelector("#Quantity4").value = "";
+            amount4 = document.querySelector("#Amount4").value = "";
+            TotalAmount = document.querySelector("#TotalAmount").value = "";
+            TotalQuantity = document.querySelector("#TotalQuantity").value = "";
         }
         // //9
         function riyal() {
@@ -264,7 +267,8 @@
             let Currentyear = document.getElementById("Currentyear").value;
             let Birthyear = document.getElementById("Birthyear").value;
             document.querySelector("#age").innerHTML = "Your Age is : " + (Currentyear - Birthyear);
-
+            document.getElementById("Currentyear").value = "";
+            document.getElementById("Birthyear").value = "";
         }
         //8
         // let totalMarks = 1000;

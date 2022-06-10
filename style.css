@@ -116,4 +116,15 @@ input::placeholder {
 
 #riyal {
     margin-top: 10px;
+}#numandper{
+    display: flex;
+    
+}#resultofcolour,.resultofcolour{
+    background-color: rgb(156, 143, 143);
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    width: 50%;
+ margin-left: 25%;   
+
 }

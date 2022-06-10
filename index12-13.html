@@ -61,45 +61,48 @@
                 resultofword = "This word is not a word";
             }
             document.querySelector('#resultofword').innerHTML = resultofword;
+            document.getElementById("wordcheck").value = "";
         }
         function integer() {
-            let integer1 = document.querySelector('#firstinteger').value;
-            let integer2 = document.querySelector('#secondinteger').value;
+            let integer1 = document.querySelector('#firstinteger');
+            let integer2 = document.querySelector('#secondinteger');
             let resultofinteger;
-            if (integer1 > integer2) {
+            if (integer1.value > integer2.value) {
                 resultofinteger = "The first integer is greater than the second integer";
-            } else if (integer1 < integer2) {
+            } else if (integer1.value < integer2.value) {
                 resultofinteger = "The first integer is less than the second integer";
             } else {
                 resultofinteger = "The first integer is equal to the second integer";
             }
             document.querySelector('#resultofinteger').innerHTML = resultofinteger;
-
+            integer1.value = "";
+            integer2.value = "";
         }
         function negative() {
-            let number = document.querySelector('#negative').value;
+            let number = document.querySelector('#negative');
             let resultofnumber;
-            if (number < 0) {
+            if (number.value < 0) {
                 resultofnumber = "The number is negative";
-            } else if (number > 0) {
+            } else if (number.value > 0) {
                 resultofnumber = "The number is positive";
             } else {
                 resultofnumber = "The number is zero";
             }
             document.querySelector('#resultofnegative').innerHTML = resultofnumber;
-
+            number.value = "";
         }
         function password() {
-            let password = document.querySelector('#password').value;
-            let confirmpassword = document.querySelector('#confirmpassword').value;
+            let password = document.querySelector('#password');
+            let confirmpassword = document.querySelector('#confirmpassword');
             let resultofpassword;
-            if (password == confirmpassword) {
+            if (password.value == confirmpassword.value) {
                 resultofpassword = "The password is correct";
             } else {
                 resultofpassword = "The password is incorrect";
             }
             document.querySelector('#resultofpassword').innerHTML = resultofpassword;
-
+            password.value = "";
+            confirmpassword.value = "";
         }
 
         let greeting;
@@ -114,20 +117,19 @@
         }
 
         function time() {
-            let time = document.querySelector('#taketime').value;
+            let time = document.querySelector('#taketime');
             let resultoftime;
-            if (time > 0 && time < 12) {
+            if (time.value > 0 && time.value < 12) {
                 resultoftime = "Good morning";
-            } else if (time >= 12 && time < 17) {
+            } else if (time.value >= 12 && time.value < 17) {
                 resultoftime = "Good afternoon";
-            } else if (time >= 17 && time < 21) {
+            } else if (time.value >= 17 && time.value < 21) {
                 resultoftime = "Good evening";
             } else {
                 resultoftime = "Good night";
             }
             document.querySelector('#resultoftime').innerHTML = resultoftime;
-
-
+            time.value = "";
         }
     </script>
 </body>
